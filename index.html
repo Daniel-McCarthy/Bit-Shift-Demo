@@ -2,125 +2,34 @@
 <html>
 
 	<head>
-	
 		<title>
 			Bit Demo
 		</title>
-
 	</head>
 	
 	<body style= background-color:pink;>
 	
-		<form action = "/action_page.php"> Decimal Input: <input type = "text" id = "decimalInput"></form>
-		<form action = "/action_page.php"> Operand Input: <input type = "text" id = "operandInput"></form>
+		<script type = "text/javascript" src = "operations.js"></script>
+	
+		
+		<form action = "">
+			<input type = "radio" name = "decimalBinaryInput" checked>Decimal Input
+			<input type = "radio" name = "decimalBinaryInput">Binary Input<br>
+		</form>
+
+
+		<form action = "/action_page.php"> Input: <input type = "text" id = "decimalInput"></form>
+		<form action = "/action_page.php"> Input: <input type = "text" id = "operandInput"></form>
+		
 		<input type="button" value="Left Shift (<<)" id="leftShiftButton" onclick="leftShift()" />
 		<input type="button" value="Right Shift (>>)" id="rightShiftButton" onclick="rightShift()" /><br>
 		<input type="button" value="Or (|)" id="orButton" onclick="or()" />
 		<input type="button" value="Xor (^)" id="xorButton" onclick="xor()" />
 		<input type="button" value="And (&)" id="andButton" onclick="and()" />
-		<form action = "/action_page.php"> Binary Output: <input type = "text" id = "binaryOutput"></form>
+		<form action = "/action_page.php"> Output: <input type = "text" id = "binaryOutput"></form>
 
+		
 	
-		<script type="text/javascript">
-		function leftShift()
-		{
-			//document.getElementById("activateButton").value = "hellokitty";
-			var form1 = document.getElementById("decimalInput");
-			var form2 = document.getElementById("operandInput");
-			if(form1.value != "")
-			{
-				if(form2.value == "")
-				{
-					form1.value = parseInt(form1.value) << 1;
-				}
-				else
-				{
-					form1.value = parseInt(form1.value) << parseInt(form2.value);
-				}
-				
-				document.getElementById("binaryOutput").value = (parseInt(form1.value) >>> 0).toString(2);
-			}
-		}
-		
-		function rightShift()
-		{
-			var form1 = document.getElementById("decimalInput");
-			var form2 = document.getElementById("operandInput");
-			
-			if(form1.value != "")
-			{
-				form1.value = parseInt(form1.value) >> 1;
-			}
-			else
-			{
-				form1.value = parseInt(form1.value) >> parseInt(form2.value);
-			}
-			
-			document.getElementById("binaryOutput").value = (parseInt(form1.value) >>> 0).toString(2);
-		}
-		
-		function or()
-		{
-			var form1 = document.getElementById("decimalInput");
-			var form2 = document.getElementById("operandInput");
-			
-			if(form1.value != "")
-			{
-				if(form2.value == "")
-				{
-					form1.value = parseInt(form1.value) | 1;
-				}
-				else
-				{
-					form1.value = parseInt(form1.value) | parseInt(form2.value);
-				}
-				
-				document.getElementById("binaryOutput").value = (parseInt(form1.value) >>> 0).toString(2);
-			}
-
-		}
-
-				function xor()
-		{
-			var form1 = document.getElementById("decimalInput");
-			var form2 = document.getElementById("operandInput");
-			
-			if(form1.value != "")
-			{
-				if(form2.value == "")
-				{
-					form1.value = parseInt(form1.value) ^ 1;
-				}
-				else
-				{
-					form1.value = parseInt(form1.value) ^ parseInt(form2.value);
-				}
-				
-				document.getElementById("binaryOutput").value = (parseInt(form1.value) >>> 0).toString(2);
-			}
-		}
-		
-		function and()
-		{
-			var form1 = document.getElementById("decimalInput");
-			var form2 = document.getElementById("operandInput");
-			
-			if(form1.value != "")
-			{
-				if(form2.value == "")
-				{
-					form1.value = parseInt(form1.value) & 1;
-				}
-				else
-				{
-					form1.value = parseInt(form1.value) & parseInt(form2.value);
-				}
-				
-				document.getElementById("binaryOutput").value = (parseInt(form1.value) >>> 0).toString(2);
-			}
-		}
-		
-		</script>
 	
 	</body>
 
