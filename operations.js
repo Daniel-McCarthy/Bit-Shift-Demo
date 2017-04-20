@@ -1,4 +1,3 @@
-
 function leftShift()
 {
 	var form1 = document.getElementById("decimalInput");
@@ -41,15 +40,6 @@ function leftShift()
 		
 		}
 
-	}
-	
-	if(decimalInput == true)
-	{
-		document.getElementById("binaryOutput").value = (parseInt(form1.value) >>> 0).toString(2);
-	}
-	else
-	{
-		document.getElementById("binaryOutput").value = (parseInt(form1.value, 2));
 	}
 }
 
@@ -96,15 +86,6 @@ function rightShift()
 		}
 
 	}
-	
-	if(decimalInput == true)
-	{
-		document.getElementById("binaryOutput").value = (parseInt(form1.value) >>> 0).toString(2);
-	}
-	else
-	{
-		document.getElementById("binaryOutput").value = (parseInt(form1.value, 2));
-	}
 }
 
 function or()
@@ -150,15 +131,6 @@ function or()
 		}
 
 	}
-	
-	if(decimalInput == true)
-	{
-		document.getElementById("binaryOutput").value = (parseInt(form1.value) >>> 0).toString(2);
-	}
-	else
-	{
-		document.getElementById("binaryOutput").value = (parseInt(form1.value, 2));
-	}
 }
 
 function xor()
@@ -203,15 +175,6 @@ function xor()
 		
 		}
 
-	}
-	
-	if(decimalInput == true)
-	{
-		document.getElementById("binaryOutput").value = (parseInt(form1.value) >>> 0).toString(2);
-	}
-	else
-	{
-		document.getElementById("binaryOutput").value = (parseInt(form1.value, 2));
 	}
 }
 
@@ -259,13 +222,27 @@ function and()
 		}
 
 	}
+}
+
+function convertInput()
+{
+	var decimalInput = new Boolean( document.getElementsByName("decimalBinaryInput")[0].checked);
+	var form1 = document.getElementById("decimalInput");
 	
-	if(decimalInput == true)
+	if(form1.value != "")
 	{
-		document.getElementById("binaryOutput").value = (parseInt(form1.value) >>> 0).toString(2);
+		if(decimalInput == true)
+		{
+			document.getElementById("binaryOutput").value = (parseInt(form1.value) >>> 0).toString(2);
+		}
+		else
+		{
+			document.getElementById("binaryOutput").value = (parseInt(form1.value, 2));
+		}
 	}
-	else
-	{
-		document.getElementById("binaryOutput").value = (parseInt(form1.value, 2));
-	}
+}
+
+function startTimer()
+{
+	setInterval(convertInput, 250);
 }
