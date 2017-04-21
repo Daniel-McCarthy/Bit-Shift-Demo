@@ -13,10 +13,11 @@
 
 		<script type = "text/javascript" src = "operations.js"></script>	
 
-		<div style="text-align: center; margin: 0 auto; width:300px; height:150px; background-color: #FF90AD; border-radius: 25px;">
 
-			<input type = "radio" name = "decimalBinaryInput" checked>Decimal Input
-			<input type = "radio" name = "decimalBinaryInput">Binary Input<br>
+		<div id = "foreground" style="text-align: center; margin: 0 auto; width:300px; height:150px; background-color: #FF90AD; border-radius: 25px;border: 3px solid white;">
+
+			<input type = "radio" name = "decimalBinaryInput" onchange = "swapColors()" checked>Decimal Input
+			<input type = "radio" name = "decimalBinaryInput" onchange = "swapColors()">Binary Input<br>
 
 			Input: <input type = "text" id = "decimalInput"><br>
 			Input: <input type = "text" id = "operandInput"><br>
@@ -27,7 +28,7 @@
 			<input type="button" value="Xor (^)" id="xorButton" onclick="xor()" />
 			<input type="button" value="And (&)" id="andButton" onclick="and()" /><br>
 			Output: <input type = "text" id = "binaryOutput">
-		</div>
+
 		</div>
 
 	</body>

@@ -246,3 +246,15 @@ function startTimer()
 {
 	setInterval(convertInput, 250);
 }
+
+function swapColors()
+{
+	var backgroundColor = document.body.style.backgroundColor;
+	var foregroundColor = document.getElementById("foreground").style.backgroundColor;
+	var swap;
+
+	swap = backgroundColor;
+	document.body.style.backgroundColor = foregroundColor;
+	document.getElementById("foreground").style.backgroundColor = swap;
+
+}
